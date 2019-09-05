@@ -1,0 +1,20 @@
+LeetCode 344 Reverse String.txt
+
+344. 反转字符串
+
+难度：简单
+通过率：62.3%
+贡献者：LeetCode
+
+编写一个函数，其作用是将输入的字符串反转过来。
+
+示例 1:
+输入: "hello"
+输出: "olleh"
+
+示例 2:
+输入: "A man, a plan, a canal: Panama"
+输出: "amanaP :lanac a ,nalp a ,nam A"
+
+相关标签：双指针、字符串
+相似题目：反转字符串中的元音字母、反转字符串 II

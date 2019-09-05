@@ -1,0 +1,26 @@
+LeetCode 155 Min Stack.txt
+
+155. 最小栈
+
+难度：简单
+通过率：47.6%
+贡献者：LeetCode
+
+设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。
+• push(x) -- 将元素 x 推入栈中。
+• pop() -- 删除栈顶的元素。
+• top() -- 获取栈顶元素。
+• getMin() -- 检索栈中的最小元素。
+
+示例:
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --> 返回 -3.
+minStack.pop();
+minStack.top();      --> 返回 0.
+minStack.getMin();   --> 返回 -2.
+
+相关标签：栈、设计
+相似题目：滑动窗口最大值、Max Stack
