@@ -12,16 +12,21 @@
 class Solution {
 public:
     TreeNode* constructMaximumBinaryTree(vector<int>& nums) {
-        return construct(nums.begin(), nums.end());
+        return construct(nums, 0, nums.size());
     }
     
 private:
-    TreeNode * construct(vector<int>::iterator begin, vector<int>::iterator end) {
+    TreeNode * construct(vector<int> &nums, int begin, int end) {
         if (begin == end) return NULL;
-        auto it = max_element(begin, end);
-        TreeNode *node = new TreeNode(*it);
-        node->left  = construct(begin, it);
-        node->right = construct(it + 1, end);
+        int cut = begin;
+        for (int i = begin + 1; i < end; i++) {
+            if (nums[i] > nums[cut]) {
+                cut = i;
+            }
+        }
+        TreeNode *node = new TreeNode(nums[cut]);
+        node->left  = construct(nums, begin, cut);
+        node->right = construct(nums, cut + 1, end);
         return node;
     }
 };

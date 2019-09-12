@@ -1,4 +1,4 @@
-// LeetCode 143 Reorder List.cpp
+// LeetCode 234 Palindrome Linked List.cpp
 
 /**
  * Definition for singly-linked list.
@@ -10,7 +10,7 @@
  */
 class Solution {
 public:
-    void reorderList(ListNode* head) {
+    bool isPalindrome(ListNode* head) {
         ListNode *ps = head, *pf = head;
         while (pf && pf->next) {
             ps = ps->next;
@@ -25,12 +25,18 @@ public:
             ps = pt;
         }
         
+        bool ans = true;
         ListNode *pa = head, *pb = rhead;
-        while (pa) {
-            ListNode *pt = pa->next;
-            pa->next = pb;
-            pa = pb;
+        while (pb) {
+            if (pa->val != pb->val) {
+                ans = false;
+            }
+            ListNode *pt = pb->next;
+            pb->next = ps;
+            ps = pb;
             pb = pt;
+            pa = pa->next;
         }
+        return ans;
     }
 };
