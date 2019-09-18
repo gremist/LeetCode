@@ -4,8 +4,8 @@
 class Solution {
 public:
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
-        vector<int> indegree(numCourses, 0);
-        vector<vector<int>> outedges(numCourses, vector<int>());
+        vector<int> indegree(numCourses);
+        vector<vector<int>> outedges(numCourses);
         for (vector<int> &p : prerequisites) {
             indegree[p[0]]++;
             outedges[p[1]].push_back(p[0]);
@@ -36,8 +36,8 @@ public:
 class Solution {
 public:
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
-        vector<int> visited(numCourses, 0); // 0: unvisited, 1: visiting, 2: visited
-        vector<vector<int>> inedges(numCourses, vector<int>());
+        vector<int> visited(numCourses);    // 0: unvisited, 1: visiting, 2: visited
+        vector<vector<int>> inedges(numCourses);
         for (vector<int> &p : prerequisites) {
             inedges[p[0]].push_back(p[1]);
         }

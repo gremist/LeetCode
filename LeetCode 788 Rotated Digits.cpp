@@ -30,7 +30,7 @@ class Solution {
 public:
     int rotatedDigits(int N) {
         int count = 0;
-        vector<int> dp(N + 1, 0);
+        vector<int> dp(N + 1);
         for (int i = 1; i <= N; i++) {
             if (i == 3 || i == 4 || i == 7 ||
                 dp[i % 10] == 1 || dp[i / 10] == 1) {

@@ -3,7 +3,7 @@
 class Solution {
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
-        vector<vector<bool>> row(9, vector<bool>(9, false)), col(row), grid(row);
+        vector<vector<bool>> row(9, vector<bool>(9)), col(row), grid(row);
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 char ch = board[i][j];

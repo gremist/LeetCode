@@ -10,7 +10,7 @@ public:
             _s += "#";
         }
         
-        vector<int> p(_s.size(), 0);
+        vector<int> p(_s.size());
         int id = 0, max_id = 0;
         for (int i = 1; i < _s.size(); i++) {
             p[i] = p[id] + id > i ? min(p[2 * id - i], p[id] + id - i) : 1;

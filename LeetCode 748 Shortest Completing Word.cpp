@@ -3,7 +3,7 @@
 class Solution {
 public:
     string shortestCompletingWord(string licensePlate, vector<string>& words) {
-        vector<int> ht1(26, 0);
+        vector<int> ht1(26);
         for (char ch : licensePlate) {
             if (isalpha(ch)) {
                 ht1[tolower(ch) - 'a']++;
@@ -16,7 +16,7 @@ public:
                 continue;
             }
             
-            vector<int> ht2(26, 0);
+            vector<int> ht2(26);
             for (char ch : words[i]) {
                 ht2[ch - 'a']++;
             }

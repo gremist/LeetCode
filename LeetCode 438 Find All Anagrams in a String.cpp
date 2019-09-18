@@ -6,7 +6,7 @@ public:
         int ss = s.size(), ps = p.size();
         if (ss < ps) return {};
         
-        vector<int> hts(26, 0), htp(26, 0);
+        vector<int> hts(26), htp(26);
         for (int i = 0; i < ps; i++) {
             htp[p[i] - 'a']++;
             hts[s[i] - 'a']++;

@@ -7,6 +7,7 @@ public:
         for (char ch : chars) {
             htc[ch - 'a']++;
         }
+        
         int ans = 0;
         for (string &w : words) {
             vector<int> htw(26);

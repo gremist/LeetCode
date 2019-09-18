@@ -12,7 +12,7 @@ public:
                     break;
                 }
             }
-            max_len = max(i - last, max_len);
+            max_len = max(max_len, i - last);
         }
         return max_len;
     }
@@ -25,8 +25,8 @@ public:
         int max_len = 0;
         vector<int> ht(128, -1);
         for (int i = 0, last = -1; i < s.size(); i++) {
-            last = max(ht[s[i]], last);
-            max_len = max(i - last, max_len);
+            last = max(last, ht[s[i]]);
+            max_len = max(max_len, i - last);
             ht[s[i]] = i;
         }
         return max_len;

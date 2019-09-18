@@ -6,7 +6,7 @@ public:
         int count = 0, max_len = 0;
         for (int n : nums) {
             count = count * n + n;
-            max_len = max(count, max_len);
+            max_len = max(max_len, count);
         }
         return max_len;
     }

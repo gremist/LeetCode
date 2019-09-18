@@ -3,7 +3,7 @@
 class Solution {
 public:
     int numJewelsInStones(string J, string S) {
-        vector<bool> ht(128, false);
+        vector<bool> ht(128);
         for (char &ch : J) {
             ht[ch] = true;
         }

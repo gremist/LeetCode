@@ -1,24 +1,13 @@
 // LeetCode 56 Merge Intervals.cpp
 
-/**
- * Definition for an interval.
- * struct Interval {
- *     int start;
- *     int end;
- *     Interval() : start(0), end(0) {}
- *     Interval(int s, int e) : start(s), end(e) {}
- * };
- */
 class Solution {
 public:
-    vector<Interval> merge(vector<Interval>& intervals) {
-        sort(intervals.begin(), intervals.end(),
-            [] (Interval &a, Interval &b) { return a.start < b.start; });
-        
-        vector<Interval> ans;
-        for (Interval &itv : intervals) {
-            if (!ans.empty() && itv.start <= ans.back().end) {
-                ans.back().end = max(itv.end, ans.back().end);
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        sort(intervals.begin(), intervals.end());
+        vector<vector<int>> ans;
+        for (vector<int> &itv : intervals) {
+            if (!ans.empty() && itv[0] <= ans.back()[1]) {
+                ans.back()[1] = max(ans.back()[1], itv[1]);
             } else {
                 ans.push_back(itv);
             }

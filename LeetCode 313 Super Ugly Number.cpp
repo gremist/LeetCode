@@ -6,11 +6,11 @@ public:
         vector<int> ugly(n);
         ugly[0] = 1;
         
-        vector<int> idx(primes.size(), 0);
+        vector<int> idx(primes.size());
         for (int i = 1; i < n; i++) {
             ugly[i] = ugly[idx[0]] * primes[0];
             for (int j = 1; j < idx.size(); j++) {
-                ugly[i] = min(ugly[idx[j]] * primes[j], ugly[i]);
+                ugly[i] = min(ugly[i], ugly[idx[j]] * primes[j]);
             }
             for (int j = 0; j < idx.size(); j++) {
                 if (ugly[i] == ugly[idx[j]] * primes[j]) {

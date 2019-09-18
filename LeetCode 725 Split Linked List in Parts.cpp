@@ -18,7 +18,7 @@ public:
             pi = pi->next;
         }
         
-        vector<ListNode *> ans(k, NULL);
+        vector<ListNode *> ans(k);
         for (int i = 0; i < k; i++) {
             if (!root) break;
             ans[i] = pi = root;

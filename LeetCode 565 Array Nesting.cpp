@@ -4,7 +4,7 @@ class Solution {
 public:
     int arrayNesting(vector<int>& nums) {
         int ans = 0;
-        vector<bool> visit(nums.size(), false);
+        vector<bool> visit(nums.size());
         for (int i = 0; i < nums.size(); i++) {
             if (visit[i]) {
                 continue;
@@ -14,7 +14,7 @@ public:
                 visit[j] = true;
                 count++;
             }
-            ans = max(count, ans);
+            ans = max(ans, count);
         }
         return ans;
     }

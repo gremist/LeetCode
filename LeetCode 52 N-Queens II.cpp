@@ -3,7 +3,7 @@
 class Solution {
 public:
     int totalNQueens(int n) {
-        vector<bool> att(5 * n + 2, false);
+        vector<bool> att(5 * n + 2);
         return backtrack(att, n, 0);
     }
     

@@ -13,7 +13,7 @@ public:
             }
             int lr = j > 0 ? houses[i] - heaters[j - 1] : INT_MAX;
             int rr = j < heaters.size() ? heaters[j] - houses[i] : INT_MAX;
-            ans = max(min(lr, rr), ans);
+            ans = max(ans, min(lr, rr));
         }
         return ans;
     }

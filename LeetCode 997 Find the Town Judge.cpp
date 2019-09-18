@@ -3,8 +3,8 @@
 class Solution {
 public:
     int findJudge(int N, vector<vector<int>>& trust) {
-        vector<int> id(N, 0);
-        vector<int> od(N, 0);
+        vector<int> id(N);
+        vector<int> od(N);
         for (vector<int> &p : trust) {
             id[p[1] - 1]++;
             od[p[0] - 1]++;

@@ -21,7 +21,7 @@ public:
         if (!root) return 0;
         int max_depth = 0;
         for (Node *c : root->children) {
-            max_depth = max(maxDepth(c), max_depth);
+            max_depth = max(max_depth, maxDepth(c));
         }
         return max_depth + 1;
     }

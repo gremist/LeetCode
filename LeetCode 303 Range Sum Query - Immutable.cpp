@@ -2,7 +2,7 @@
 
 class NumArray {
 public:
-    NumArray(vector<int> nums) : sum(nums.size() + 1, 0) {
+    NumArray(vector<int> nums) : sum(nums.size() + 1) {
         for (int i = 1; i < sum.size(); i++) {
             sum[i] = sum[i - 1] + nums[i - 1];
         }

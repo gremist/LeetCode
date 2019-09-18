@@ -4,7 +4,7 @@ class Solution {
 public:
     int hIndex(vector<int>& citations) {
         int size = citations.size();
-        vector<int> bucket(size + 1, 0);
+        vector<int> bucket(size + 1);
         for (int ci : citations) {
             bucket[min(ci, size)]++;
         }

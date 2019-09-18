@@ -23,7 +23,7 @@ public:
         if (sum < abs(S) || (sum + S) % 2) {
             return 0;
         }
-        vector<int> dp((sum + S) / 2 + 1, 0);
+        vector<int> dp((sum + S) / 2 + 1);
         dp[0] = 1;
         for (int n : nums) {
             for (int i = dp.size() - 1; i >= n; i--) {

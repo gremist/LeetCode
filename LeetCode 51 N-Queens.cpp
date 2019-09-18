@@ -5,7 +5,7 @@ public:
     vector<vector<string>> solveNQueens(int n) {
         vector<vector<string>> ans;
         vector<int> cur(n);
-        vector<bool> att(5 * n + 2, false);
+        vector<bool> att(5 * n + 2);
         backtrack(ans, cur, att, n, 0);
         return ans;
     }

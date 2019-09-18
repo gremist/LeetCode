@@ -1,6 +1,6 @@
-LeetCode 1013 Pairs of Songs With Total Durations Divisible by 60.txt
+LeetCode 1010 Pairs of Songs With Total Durations Divisible by 60.txt
 
-1013. 总持续时间可被 60 整除的歌曲
+1010. 总持续时间可被 60 整除的歌曲
 
 难度：简单
 通过率：39.6%

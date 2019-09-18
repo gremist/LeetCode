@@ -3,7 +3,7 @@
 class Solution {
 public:
     int firstUniqChar(string s) {
-        vector<int> ht(26, 0);
+        vector<int> ht(26);
         for (int i = 0; i < s.size(); i++) {
             ht[s[i] - 'a']++;
         }

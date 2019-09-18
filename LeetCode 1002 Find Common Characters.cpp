@@ -3,20 +3,19 @@
 class Solution {
 public:
     vector<string> commonChars(vector<string>& A) {
-        vector<int> ht1(26, 0);
+        vector<int> ht1(26);
         for (char ch : A[0]) {
             ht1[ch - 'a']++;
         }
         
         for (int i = 1; i < A.size(); i++) {
-            vector<int> ht2(26, 0);
+            vector<int> ht2(26);
             for (char ch : A[i]) {
-                if (ht1[ch - 'a']) {
-                    ht1[ch - 'a']--;
-                    ht2[ch - 'a']++;
-                }
+                ht2[ch - 'a']++;
             }
-            ht1 = ht2;
+            for (int i = 0; i < 26; i++) {
+                ht1[i] = min(ht1[i], ht2[i]);
+            }
         }
         
         vector<string> ans;

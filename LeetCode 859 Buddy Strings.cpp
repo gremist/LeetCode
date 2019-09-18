@@ -4,7 +4,7 @@ class Solution {
 public:
     bool buddyStrings(string A, string B) {
         if (A.size() != B.size()) return false;
-        vector<int> ht(26, 0);
+        vector<int> ht(26);
         bool sp = false, dp = false;
         for (int i = 0, last = -1; i < A.size(); i++) {
             if (A[i] != B[i]) {

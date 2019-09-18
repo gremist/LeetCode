@@ -4,7 +4,7 @@
 class Solution {
 public:
     int minSubArrayLen(int s, vector<int>& nums) {
-        vector<int> sum(nums.size() + 1, 0);
+        vector<int> sum(nums.size() + 1);
         for (int i = 1; i < sum.size(); i++) {
             sum[i] = sum[i - 1] + nums[i - 1];
         }
@@ -29,7 +29,7 @@ public:
 class Solution {
 public:
     int minSubArrayLen(int s, vector<int>& nums) {
-        vector<int> sum(nums.size() + 1, 0);
+        vector<int> sum(nums.size() + 1);
         for (int i = 1; i < sum.size(); i++) {
             sum[i] = sum[i - 1] + nums[i - 1];
         }
@@ -68,7 +68,7 @@ public:
         while (r < nums.size()) {
             sum += nums[r++];
             while (sum >= s) {
-                min_len = min(r - l, min_len);
+                min_len = min(min_len, r - l);
                 sum -= nums[l++];
             }
         }

@@ -4,7 +4,7 @@ class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
         if (ransomNote.size() > magazine.size()) return false;
-        vector<int> ht(26, 0);
+        vector<int> ht(26);
         for (char ch : magazine) {
             ht[ch - 'a']++;
         }

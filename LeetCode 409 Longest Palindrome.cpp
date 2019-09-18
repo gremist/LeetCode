@@ -3,7 +3,7 @@
 class Solution {
 public:
     int longestPalindrome(string s) {
-        vector<int> ht(128, 0);
+        vector<int> ht(128);
         for (char ch : s) {
             ht[ch]++;
         }
