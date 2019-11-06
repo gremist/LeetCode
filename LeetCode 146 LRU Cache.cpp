@@ -7,53 +7,30 @@ public:
     }
 
     int get(int key) {
-        if (m.find(key) != m.end()) {
-            update(key);
-            return m[key][0];
-        }
-        return -1;
+        if (m.find(key) == m.end()) return -1;
+        int value = m[key]->second;
+        l.erase(m[key]);
+        l.emplace_front(key, value);
+        m[key] = l.begin();
+        return value;
     }
 
     void put(int key, int value) {
         if (m.find(key) != m.end()) {
-            update(key);
-            m[key][0] = value;
-            return;
+            l.erase(m[key]);
         }
-        push(key, value);
-        if (m.size() > c + 1) {
-            pop();
+        l.emplace_front(key, value);
+        m[key] = l.begin();
+        if (l.size() > c) {
+            m.erase(l.back().first);
+            l.pop_back();
         }
     }
-    
-private:
-    void push(int key, int value) {
-        m[key] = {value, m[-1][1], -1};
-        m[m[-1][1]][2] = key;
-        m[-1][1] = key;
-    }
-    
-    void pop() {
-        int key = m[-1][2];
-        m[-1][2] = m[key][2];
-        m[m[key][2]][1] = -1;
-        m.erase(key);
-    }
-    
-    void update(int key) {
-        m[m[key][1]][2] = m[key][2];
-        m[m[key][2]][1] = m[key][1];
-        m[key][1] = m[-1][1];
-        m[key][2] = -1;
-        m[m[-1][1]][2] = key;
-        m[-1][1] = key;
-    }
-    
+
 private:
     int c;
-    unordered_map<int, vector<int>> m = {
-        {-1, {0, -1, -1}}
-    };
+    unordered_map<int, list<pair<int, int>>::iterator> m;
+    list<pair<int, int>> l;
 };
 
 /**

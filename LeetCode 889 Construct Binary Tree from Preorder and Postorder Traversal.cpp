@@ -21,10 +21,10 @@ private:
         if (size == 1) return new TreeNode(pre[pri]);
         for (int i = 0; i < size - 1; i++) {
             if (post[poi + i] == pre[pri + 1]) {
-                TreeNode *node = new TreeNode(pre[pri]);
-                node->left  = dfs(pre, post, pri + 1, poi, i + 1);
-                node->right = dfs(pre, post, pri + i + 2, poi + i + 1, size - i - 2);
-                return node;
+                TreeNode *root = new TreeNode(pre[pri]);
+                root->left  = dfs(pre, post, pri + 1, poi, i + 1);
+                root->right = dfs(pre, post, pri + i + 2, poi + i + 1, size - i - 2);
+                return root;
             }
         }
         throw logic_error("Unreachable code path");

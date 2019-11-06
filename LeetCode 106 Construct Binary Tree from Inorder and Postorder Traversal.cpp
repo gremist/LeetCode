@@ -20,10 +20,10 @@ private:
         if (size <= 0) return NULL;
         for (int i = 0; i < size; i++) {
             if (inorder[ii + i] == postorder[pi + size - 1]) {
-                TreeNode *node = new TreeNode(postorder[pi + size - 1]); 
-                node->left  = dfs(inorder, postorder, ii, pi, i);
-                node->right = dfs(inorder, postorder, ii + i + 1, pi + i, size - i - 1);
-                return node;
+                TreeNode *root = new TreeNode(postorder[pi + size - 1]); 
+                root->left  = dfs(inorder, postorder, ii, pi, i);
+                root->right = dfs(inorder, postorder, ii + i + 1, pi + i, size - i - 1);
+                return root;
             }
         }
         throw logic_error("Unreachable code path");

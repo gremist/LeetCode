@@ -17,16 +17,16 @@ public:
     
 private:
     TreeNode * construct(vector<int> &nums, int begin, int end) {
-        if (begin == end) return NULL;
+        if (begin >= end) return NULL;
         int cut = begin;
         for (int i = begin + 1; i < end; i++) {
             if (nums[i] > nums[cut]) {
                 cut = i;
             }
         }
-        TreeNode *node = new TreeNode(nums[cut]);
-        node->left  = construct(nums, begin, cut);
-        node->right = construct(nums, cut + 1, end);
-        return node;
+        TreeNode *root = new TreeNode(nums[cut]);
+        root->left  = construct(nums, begin, cut);
+        root->right = construct(nums, cut + 1, end);
+        return root;
     }
 };
