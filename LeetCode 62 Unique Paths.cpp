@@ -9,6 +9,6 @@ public:
                 dp[j] += dp[j - 1];
             }
         }
-        return dp.back();
+        return dp[n - 1];
     }
 };

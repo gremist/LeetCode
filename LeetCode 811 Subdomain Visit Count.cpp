@@ -15,8 +15,8 @@ public:
         
         vector<string> ans(m.size());
         int i = 0;
-        for (auto &p : m) {
-            ans[i++] = to_string(p.second) + " " + p.first;
+        for (auto &[k, v] : m) {
+            ans[i++] = to_string(v) + " " + k;
         }
         return ans;
     }

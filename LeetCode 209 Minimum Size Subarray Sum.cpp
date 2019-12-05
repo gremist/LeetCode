@@ -13,8 +13,8 @@ public:
         
         int min_len = nums.size() + 1;
         for (int i = 0; i < sum.size() - 1; i++) {
-            int range = min(i + min_len, (int)sum.size());
-            for (int j = i + 1; j < range; j++) {
+            int end = min(i + min_len, (int)sum.size());
+            for (int j = i + 1; j < end; j++) {
                 if (sum[j] - sum[i] >= s) {
                     min_len = j - i;
                     break;
@@ -38,8 +38,8 @@ public:
         
         int min_len = nums.size() + 1;
         for (int i = 0; i < sum.size() - 1; i++) {
-            int range = min(i + min_len, (int)sum.size());
-            int lo = i + 1, hi = range - 1;
+            int end = min(i + min_len, (int)sum.size());
+            int lo = i + 1, hi = end - 1;
             while (lo <= hi) {
                 int mid = (lo + hi) / 2;
                 if (sum[mid] - sum[i] < s) {
@@ -51,7 +51,7 @@ public:
                     break;
                 }
             }
-            if (lo < range) {
+            if (lo < end) {
                 min_len = lo - i;
             }
         }

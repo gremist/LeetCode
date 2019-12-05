@@ -10,9 +10,8 @@ public:
         }
         
         priority_queue<pair<int, int>> q;
-        for (auto &pair : m) {
-            int n = pair.first;
-            q.emplace(m[n], n);
+        for (auto &[n, v] : m) {
+            q.emplace(v, n);
         }
         
         vector<int> ans(k);
@@ -34,9 +33,8 @@ public:
         }
         
         vector<vector<int>> count(nums.size());
-        for (auto &pair : m) {
-            int n = pair.first;
-            count[m[n] - 1].push_back(n);
+        for (auto &[n, v] : m) {
+            count[v - 1].push_back(n);
         }
         
         vector<int> ans(k);

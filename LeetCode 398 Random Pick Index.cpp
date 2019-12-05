@@ -8,9 +8,9 @@ public:
     
     int pick(int target) {
         int ans;
-        for (int i = 0, count = 0; i < nums.size(); i++) {
+        for (int i = 0, n = 0; i < nums.size(); i++) {
             if (nums[i] == target) {
-                uniform_int_distribution<int> uid(0, count++);
+                uniform_int_distribution<int> uid(0, n++);
                 if (!uid(dre)) {
                     ans = i;
                 }

@@ -11,6 +11,7 @@ LeetCode 559 Maximum Depth of N-ary Tree.txt
 
 例如，给定一个 3叉树 :
 [narytreeexample.png]
+
 我们应返回其最大深度，3。
 
 说明:

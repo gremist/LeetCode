@@ -10,16 +10,15 @@ public:
         }
         
         priority_queue<pair<int, char>> q;
-        for (auto &pair : m) {
-            char ch = pair.first;
-            q.emplace(m[ch], ch);
+        for (auto &[ch, v] : m) {
+            q.emplace(v, ch);
         }
         
         string ans;
         for (int i = 0, n = q.size(); i < n; i++) {
-            char ch = q.top().second;
+            auto [v, ch] = q.top();
             q.pop();
-            ans.append(m[ch], ch);
+            ans.append(v, ch);
         }
         return ans;
     }
@@ -35,9 +34,8 @@ public:
         }
         
         vector<string> count(s.size());
-        for (auto &pair : m) {
-            char ch = pair.first;
-            count[m[ch] - 1].append(m[ch], ch);
+        for (auto &[ch, v] : m) {
+            count[v - 1].append(v, ch);
         }
         
         string ans;
